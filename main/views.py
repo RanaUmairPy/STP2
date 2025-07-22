@@ -41,7 +41,7 @@ u11 = settings.AUTH_USER_MODEL
 
 def get_model():
     from sentence_transformers import SentenceTransformer, util
-    model = SentenceTransformer('all-MiniLM-L6-v2')  # switch to local path if stored
+    model = SentenceTransformer('all-mpnet-base-v2')  # switch to local path if stored
     return model, util
 
 
