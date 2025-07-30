@@ -27,6 +27,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from .models import Notification
 from .serizalizer import NotificationSerializer
+from sentence_transformers import SentenceTransformer, util
 
 u1 = get_user_model()
 u11 = settings.AUTH_USER_MODEL 
