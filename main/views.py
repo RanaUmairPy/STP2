@@ -35,12 +35,15 @@ u11 = settings.AUTH_USER_MODEL
 #model = SentenceTransformer('paraphrase-MiniLM-L3-v2',device='cpu')
 #model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
 
-model = SentenceTransformer('all-MiniLM-L6-v2',device='cpu')  # or any of the models above
+#model = SentenceTransformer('all-MiniLM-L6-v2',device='cpu')  # or any of the models above
 #model = SentenceTransformer('stsb-roberta-large')
 #model = SentenceTransformer('all-mpnet-base-v2')  # ~420MB but ~85 STS accuracy
 #model = SentenceTransformer('D:\Project\stsb-roberta-large1')  # ~60MB but ~80 STS accuracy
 
+EMBEDDING_MODEL = 'all-MiniLM-L6-v2'  # Options: paraphrase-MiniLM-L3-v2, stsb-roberta-large, all-mpnet-base-v2
 
+# 💡 Load model once globally (avoid reloading per request!)
+model = SentenceTransformer(EMBEDDING_MODEL, device='cpu')
 
 """def get_model():
     from sentence_transformers import SentenceTransformer, util
